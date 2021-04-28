@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ******************************* */
+/* ****** Estilos generales ****** */
+/* ******************************* */
+.flexContainer {
+    display: flex;
+}
+
+.noDots {
+    list-style: none;
+}
+
+.noMarginBottom {
+    margin-bottom: 0;
+}
+
+body {
+    background: url("../img/header-desktop.jpg") no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+img {
+    width: 100%;
+}
+
+/* ****** Fin estilos generales ****** */
+
+
+/* ********************************** */
+/* ****** Estilos header y nav ****** */
+/* ********************************** */
+.headerNavContainer {
+    position: sticky;
+    top: 0.01em;
+    background-color: red;
+    /* padding: 0.5em 0; */
+    height: 8vh; /* Height específico para evitar que el contenido se desplace al abrir el menú (gustos personales) */
+}
+
+header {
+    padding: 1vh 1em;
+    height: inherit;
+    /* width: 100%; */
+    /* border: 1px solid black; */
+}
+
+.title {
+    line-height: 8vh;
+}
+
+.logoContainer {
+    margin-right: 3em;
+    width: 70%;
+}
+
+.logoContainer img {
+    max-width: 20rem;
+    max-height: 6vh;
+}
+
+
+/* *** Menu section *** */
+#navegacion {
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+}
+
+.openMenu, .closeMenu {
+    width: 5rem;
+    /* margin-right: 0.5vw; */
+    position: absolute;
+    top: 0;
+    text-align: right;
+    height: 8vh;
+}
+
+.closeMenu {
+    display: none; /* Ocultar por defecto el icono para cerrar menú */
+    /* padding: 0.9em; Padding para igualar tamaño con el icono de abrir menú sin perder zona de contacto */
+    margin: 1.5vw;
+    /* overflow: auto; */
+    max-height: 8vh;
+}
+
+
+.openMenu img, .closeMenu img {
+    max-height: 8vh;
+    width: auto;
+}
+
+.closeMenu img {
+    max-height: 6vh; /* Máxima altura diferente al de abrir menú por diferencia de tamaño del icono */
+    width: auto;
+}
+
+#navegacion nav { /* "Achicar" a cero los enlaces para no mostrarse por defecto */
+    height: 0;
+    overflow: hidden;
+    transition: height 1s;
+    background: yellow;
+    width: 100%;
+}
+
+.menu {
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 1em;
+}
+
+.menu li {
+    margin-bottom: 1em;
+}
+
+.menuLinks {
+    display: block;
+    background: chocolate;
+    padding: 0.5em;
+    font-size: 1.1rem;
+    color: black;
+    text-decoration: none;
+}
+
+.menuLinks:hover, .menuLinks:focus {
+    background: cadetblue;
+}
+
+#navegacion:target .openMenu {
+    display: none; /* Ocultar icono de abrir menú cuando este se encuentra abierto */
+}
+
+#navegacion:target nav {
+    height: 15rem;
+    transition: height 1s;
+    overflow: visible;
+}
+
+#navegacion:target .closeMenu {
+    display: block; /* Mostar icono para cerrar el menú cuando se encuentre abierto */
+}
+
+
+/* ******************************* */
+/* ****** Celulares > 320px ****** */
+/* ******************************* */
+@media screen and (min-width: 320px) {
+}
+
+
+
+/* ***************************** */
+/* ****** Tablets > 768px ****** */
+/* ***************************** */
+@media screen and (min-width: 768px) {
+
+}
+
+
+
+/* ****************************** */
+/* ****** Desktop > 1024px ****** */
+/* ****************************** */
+@media screen and (min-width: 1024px) {
+
+}
+
+
+
+/* ************************************* */
+/* ****** Large desktops > 1440px ****** */
+/* ************************************* */
+@media screen and (min-width: 1440px) {
+
+}
