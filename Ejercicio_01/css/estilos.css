@@ -20,14 +20,15 @@ html {
     list-style: none;
 }
 
-.noMarginBottom {
-    margin-bottom: 0;
+.noMarginTop {
+    margin-top: 0;
 }
 
 body {
     background: url("../img/header-desktop.jpg") no-repeat center;
     background-size: cover;
     background-attachment: fixed;
+    font-family: "Liberation Sans",Arial,Helvetica,FreeSans,sans-serif;
 }
 
 img {
@@ -36,6 +37,36 @@ img {
 
 /* ****** Fin estilos generales ****** */
 
+/* *************************************** */
+/* ****** Estilos nav accesibilidad ****** */
+/* *************************************** */
+.navAccesibilidad {
+    background: url("../img/Background2.png") repeat center;
+}
+
+.navAccesibilidad ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+.accesibilidadItem {
+    margin: 0.5rem 0;
+}
+
+.accesibilidadItem a {
+    display: block;
+    text-decoration: none;
+    color: #ccc;
+    background: rgba(128, 255, 0, 0.116);
+    padding: 1rem 0.5rem;
+}
+
+.accesibilidadItem a:hover, .accesibilidadItem a:focus {
+    background: rgba(128, 255, 0, 0.25);
+    outline: 3px solid #ccc;
+}
+
+/* *** Fin estilos nav accesibilidad *** */
 
 /* ********************************** */
 /* ****** Estilos header y nav ****** */
@@ -43,16 +74,13 @@ img {
 .headerNavContainer {
     position: sticky;
     top: 0.01em;
-    background-color: red;
-    /* padding: 0.5em 0; */
+    background-color: rgba(94, 155, 51, 0.897);
     height: 8vh; /* Height específico para evitar que el contenido se desplace al abrir el menú (gustos personales) */
 }
 
 header {
     padding: 1vh 1em;
     height: inherit;
-    /* width: 100%; */
-    /* border: 1px solid black; */
 }
 
 .title {
@@ -60,7 +88,7 @@ header {
 }
 
 .logoContainer {
-    margin-right: 3em;
+    margin: 0 3em 0 0;
     width: 70%;
 }
 
@@ -80,7 +108,6 @@ header {
 
 .openMenu, .closeMenu {
     width: 5rem;
-    /* margin-right: 0.5vw; */
     position: absolute;
     top: 0;
     text-align: right;
@@ -89,12 +116,13 @@ header {
 
 .closeMenu {
     display: none; /* Ocultar por defecto el icono para cerrar menú */
-    /* padding: 0.9em; Padding para igualar tamaño con el icono de abrir menú sin perder zona de contacto */
     margin: 1.5vw;
-    /* overflow: auto; */
     max-height: 8vh;
 }
 
+.openMenu > figure, .closeMenu > figure {
+    margin: 0;
+}
 
 .openMenu img, .closeMenu img {
     max-height: 8vh;
@@ -110,7 +138,7 @@ header {
     height: 0;
     overflow: hidden;
     transition: height 1s;
-    background: yellow;
+    background: url("../img/Dirt-background.png") repeat center;
     width: 100%;
 }
 
@@ -127,15 +155,17 @@ header {
 
 .menuLinks {
     display: block;
-    background: chocolate;
+    background: rgba(94, 155, 51, 0.897);
     padding: 0.5em;
     font-size: 1.1rem;
     color: black;
     text-decoration: none;
+    font-weight: 600;
+    text-align: center;
 }
 
 .menuLinks:hover, .menuLinks:focus {
-    background: cadetblue;
+    background: rgba(117, 240, 30, 0.897);
 }
 
 #navegacion:target .openMenu {
@@ -145,18 +175,75 @@ header {
 #navegacion:target nav {
     height: 15rem;
     transition: height 1s;
-    overflow: visible;
 }
 
 #navegacion:target .closeMenu {
     display: block; /* Mostar icono para cerrar el menú cuando se encuentre abierto */
 }
 
+/* Fin de estilos header y nav */
+
+
+/* ************************** */
+/* ****** Estilos main ****** */
+/* ************************** */
+article {
+    margin: 1rem;
+    padding: 0.5rem;
+    background-color: rgba(240, 240, 240, 0.7);
+    text-align: justify;
+    border-radius: 0.4rem;
+}
+
+.fontColor {
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+h2, h3, h4, h5 {
+    margin: 1rem 0 0.5rem;
+    text-align: left;
+    column-span: all;
+}
+
+h2 {
+    font-size: 2.2rem;
+}
+
+h3 {
+    font-size: 1.7rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+h5 {
+    font-size: 1.3rem;
+    font-style: italic;
+}
+
+figure {
+    margin: 1rem;
+    column-span: all;
+}
+
+.notchImage img {
+    border-radius: 50%;
+}
 
 /* ******************************* */
 /* ****** Celulares > 320px ****** */
 /* ******************************* */
 @media screen and (min-width: 320px) {
+    /* *** Main *** */
+    .survivalMode, .creativeMode, .hardcoreMode {
+        margin-left: 0;
+        margin-right: 0;
+        background: none;
+    }
 }
 
 
@@ -165,6 +252,25 @@ header {
 /* ****** Tablets > 768px ****** */
 /* ***************************** */
 @media screen and (min-width: 768px) {
+    article {
+        padding: 1rem;
+    }
+    
+    .columnsContent {
+        column-count: 2;
+        column-gap: 1.5em;
+        margin: 1.5em;
+    }
+
+    figure {
+        max-width: 18rem;
+        column-span: all;
+        margin: 2rem auto;
+    }
+
+    .survival, .creativeScreen, .hardcoreDeath {
+        max-width: 30rem;
+    }
 
 }
 
@@ -174,6 +280,73 @@ header {
 /* ****** Desktop > 1024px ****** */
 /* ****************************** */
 @media screen and (min-width: 1024px) {
+    .headerNavContainer {
+        height: auto;
+        background: url("../img/Background2.png") repeat center;
+    }
+
+    header {
+        padding: 2rem 2rem 1rem;
+        height: auto;
+    }
+
+    .title {
+        line-height: unset;
+    }
+
+    .logoContainer {
+        margin: auto;
+    }
+
+    #navegacion {
+        display: block;
+    }
+
+    .openMenu, .closeMenu {
+        display: none;
+    }
+
+    #navegacion nav {
+        height: auto;
+        background: none;
+    }
+
+    .menu {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .menu li {
+        margin-bottom: 0;
+    }
+
+    .menuLinks {
+        position: relative;
+        color: #ccc;
+        background: rgba(38, 83, 5, 0.897);
+        border-radius: 0.4rem;
+        padding: 0.7rem 1rem;
+        transition: background 1s ease;
+    }
+
+    .menuLinks:hover, .menuLinks:focus {
+        top: -0.3rem;
+        background: rgba(94, 155, 51, 0.897);
+        border-bottom: 0.2rem solid #ccc;
+        transition: background 1s ease;
+    }
+
+    #contenido > section {
+        padding: 2rem;
+    }
+
+    .columnsContent {
+        margin: auto;
+        max-width: 1300px;
+        column-count: 3;
+        padding: 2rem;
+    }
+
 
 }
 
@@ -183,5 +356,5 @@ header {
 /* ****** Large desktops > 1440px ****** */
 /* ************************************* */
 @media screen and (min-width: 1440px) {
-
+    
 }
