@@ -234,6 +234,90 @@ figure {
     border-radius: 50%;
 }
 
+/* *** Tabla de ediciones *** */
+.tablesContainer {
+    flex-direction: column;
+}
+
+.javaEdition, .bedrockEdition, .dungeons, .educationEdition {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto 2rem;
+    background: #eeea;
+}
+
+th, td {
+    border: 0.1rem solid black;
+}
+
+tbody {
+    width: 100%;
+    /* Width definido para que ocupe el 100% de su contenedor */
+}
+
+tr {
+    display: flex;
+    flex-direction: column;
+    /* Mostrar las filas de la tabla como columnas */
+    font-size: 1.2rem;
+}
+
+.tableHeaders {
+    display: none; /* Ocultar por defecto los encabezados de la tabla para poder mostrarlos en columna mediante pseudo-clase */
+}
+
+td {
+    display: flex;
+    align-items: center;
+}
+
+td::before {
+    background: rgba(94, 155, 51, 0.493);
+    margin-right: 0.5em;
+    text-align: left;
+    font-style: italic;
+    font-weight: 500;
+    padding: 1rem;
+}
+
+.javaEdition td:nth-of-type(1)::before {
+    content: "Versión final";
+}
+
+.javaEdition td:nth-of-type(2)::before, .javaEdition td:nth-of-type(3)::before {
+    content: "Versión en desarrollo";
+}
+
+.bedrockEdition td:nth-of-type(1)::before, .bedrockEdition td:nth-of-type(2)::before, .bedrockEdition td:nth-of-type(3)::before, .bedrockEdition td:nth-of-type(4)::before, .bedrockEdition td:nth-of-type(5)::before, .bedrockEdition td:nth-of-type(6)::before, .bedrockEdition td:nth-of-type(7)::before, .bedrockEdition td:nth-of-type(8)::before {
+    content: "Versión final";
+}
+
+.bedrockEdition td:nth-of-type(9)::before, .bedrockEdition td:nth-of-type(10)::before, .bedrockEdition td:nth-of-type(11)::before{
+    content: "Versión en desarrollo";
+}
+
+.dungeons td::before, .educationEdition td::before {
+    content: "Versión final";
+}
+
+.tableIllustrations {
+    max-width: 2rem;
+    margin: 0.2rem 0.4rem;
+}
+
+.tableIllustrations img {
+    vertical-align: middle;
+}
+
+td a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    margin: 0 0.3rem;
+}
+
+
 /* ******************************* */
 /* ****** Celulares > 320px ****** */
 /* ******************************* */
@@ -254,12 +338,12 @@ figure {
 @media screen and (min-width: 768px) {
     article {
         padding: 1rem;
+        margin: 1.5em;
     }
     
     .columnsContent {
         column-count: 2;
         column-gap: 1.5em;
-        margin: 1.5em;
     }
 
     figure {
@@ -270,6 +354,10 @@ figure {
 
     .survival, .creativeScreen, .hardcoreDeath {
         max-width: 30rem;
+    }
+
+    .tableIllustrations {
+        max-width: 3rem;
     }
 
 }
@@ -314,40 +402,77 @@ figure {
     .menu {
         flex-direction: row;
         align-items: center;
+        justify-content: center;
     }
 
     .menu li {
-        margin-bottom: 0;
+        margin: 0 2rem 0;
     }
 
     .menuLinks {
         position: relative;
+        top: 0;
         color: #ccc;
         background: rgba(38, 83, 5, 0.897);
         border-radius: 0.4rem;
         padding: 0.7rem 1rem;
-        transition: background 1s ease;
+        transition: background 1s ease, top 1s;
     }
 
     .menuLinks:hover, .menuLinks:focus {
-        top: -0.3rem;
+        top: -0.7rem;
         background: rgba(94, 155, 51, 0.897);
-        border-bottom: 0.2rem solid #ccc;
-        transition: background 1s ease;
+        /* border-bottom: 0.2rem solid #ccc; */
+        transition: background 1s ease, top 1s;
     }
 
     #contenido > section {
         padding: 2rem;
     }
 
-    .columnsContent {
-        margin: auto;
+    article {
         max-width: 1300px;
-        column-count: 3;
+        margin: auto;
         padding: 2rem;
     }
 
+    .columnsContent {
+        column-count: 3;
+    }
 
+    /* *** Tabla *** */
+    .javaEdition, .bedrockEdition, .dungeons, .educationEdition {
+        min-width: fit-content;
+        max-width: 35rem;
+    }
+    
+    caption h3 {
+        text-align: center;
+    }
+
+    tr, .tableHeaders {
+        display: table-row;
+        /* Resetear el comportamiento de las filas */
+        text-align: center;
+    }
+
+    th {
+        padding: 0.5rem 1rem;
+    }
+
+    td {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    td::before {
+        display: none;
+    }
+
+    .tableIllustrations {
+        margin: 1rem auto;
+    }
 }
 
 
