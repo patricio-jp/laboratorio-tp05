@@ -46,11 +46,10 @@ img {
 
 .navAccesibilidad ul {
     display: flex;
-    justify-content: space-around;
 }
 
 .accesibilidadItem {
-    margin: 0.5rem 0;
+    margin: 0.5rem 0.2rem;
 }
 
 .accesibilidadItem a {
@@ -73,7 +72,7 @@ img {
 /* ********************************** */
 .headerNavContainer {
     position: sticky;
-    top: 0.01em;
+    top: 0;
     background-color: rgba(94, 155, 51, 0.897);
     height: 8vh; /* Height específico para evitar que el contenido se desplace al abrir el menú (gustos personales) */
 }
@@ -230,6 +229,11 @@ figure {
     column-span: all;
 }
 
+.notchImage {
+    max-width: 18rem;
+    margin: auto;
+}
+
 .notchImage img {
     border-radius: 50%;
 }
@@ -317,6 +321,92 @@ td a {
     margin: 0 0.3rem;
 }
 
+/* *** Galería *** */
+.galeria {
+    flex-direction: column;
+    justify-content: center;
+}
+
+.galeria figure {
+    border: 0.1rem solid #444;
+}
+
+.galeria figure img {
+    height: 100%; /* Para igualar el alto de las imagenes al 100% del figure (en algunas solo produce una muy ligera deformación casi imperceptible) */
+}
+
+/* *** Formulario *** */
+form {
+    text-align: left;
+    padding: 0.5rem;
+}
+
+
+.inputsContainer {
+    margin-top: 0.5rem;
+    flex-direction: column;
+    background: rgba(94, 155, 51, 0.397);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+
+.inputsContainer > fieldset {
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea {
+    margin-top: 0.4rem;
+    padding: 0.5rem;
+}
+
+label {
+    margin-bottom: 0.5rem;
+}
+
+label[for=name], label[for=email], label[for=message] {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputsContainer > fieldset {
+    margin-top: 0.5rem;
+}
+
+input[type=text], input[type=email], textarea {
+    background: rgba(255, 255, 255, 0.336);
+    border-radius: 0.2rem;
+}
+
+label[for=message] {
+    margin-top: 1rem;
+}
+
+label textarea {
+    width: 100%;
+    resize: none;
+    line-height: 1.2rem;
+    font-family: "Liberation Sans",Arial,Helvetica,FreeSans,sans-serif;
+}
+
+.buttonsContainer {
+    flex-direction: column;
+}
+
+input[type=submit] {
+    background: rgba(168, 110, 48, 0.897);
+    font-weight: 600;
+    border-radius: 0.3rem;
+    padding: 0.7rem;
+}
+
+input[type=reset] {
+    background: #fff7;
+    border-radius: 0.3rem;
+    font-weight: 600;
+    padding: 0.7rem;
+}
+
 
 /* ******************************* */
 /* ****** Celulares > 320px ****** */
@@ -336,6 +426,10 @@ td a {
 /* ****** Tablets > 768px ****** */
 /* ***************************** */
 @media screen and (min-width: 768px) {
+    .accesibilidadItem {
+        margin: 0.5rem 1rem;
+    }
+
     article {
         padding: 1rem;
         margin: 1.5em;
@@ -358,6 +452,20 @@ td a {
 
     .tableIllustrations {
         max-width: 3rem;
+    }
+
+    .galeria {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .galeria figure {
+        max-width: calc(100% / 2.4);
+        margin: 1rem;
+    }
+
+    .inputsContainer {
+        padding: 1rem;
     }
 
 }
@@ -432,7 +540,7 @@ td a {
 
     article {
         max-width: 1300px;
-        margin: auto;
+        margin: 1rem auto;
         padding: 2rem;
     }
 
@@ -473,6 +581,53 @@ td a {
     .tableIllustrations {
         margin: 1rem auto;
     }
+
+    .galeria figure {
+        max-width: calc(100% / 3.4);
+    }
+
+    /* *** Formulario *** */
+    .inputsContainer {
+        max-width: 80%;
+        margin: 1rem auto;
+        padding: 1rem 5%;
+    }
+
+    label[for=name], label[for=email], label[for=message] {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    input[type=text], input[type=email], label textarea {
+        /* margin-left: 4rem; */
+        width: 80%
+    }
+
+    .buttonsContainer {
+        position: relative;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    input[type=submit], input[type=reset] {
+        margin: 0 1rem;
+        padding: 0.7rem 3rem;
+    }
+
+    input[type=submit]:hover, input[type=submit]:focus, input[type=reset]:hover, input[type=reset]:focus {
+        transition: all 0.5s;
+        outline: 0.15rem solid rgba(17, 41, 0, 0.8);
+    }
+
+    input[type=submit]:hover, input[type=submit]:focus {
+        background: rgba(209, 124, 33, 0.897);
+    }
+
+    input[type=reset]:hover, input[type=reset]:focus {
+        background: #fffc;
+    }
+
 }
 
 
@@ -481,5 +636,7 @@ td a {
 /* ****** Large desktops > 1440px ****** */
 /* ************************************* */
 @media screen and (min-width: 1440px) {
-    
+    .galeria figure {
+        max-width: calc(100% / 4.5);
+    }
 }

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Patricio Agustín Jimenez Paz">
+    <meta name="description" content="Minecraft es un videojuego de construcción sandbox creado originalmente por el sueco Markus Persson (conocido comúnmente como Notch), y posteriormente desarrollado por su empresa, Mojang Studios. El juego implica que los jugadores interactúen con el mundo del juego colocando y rompiendo varios tipos de bloques en un entorno tridimensional.">
+    <title>Contacto - Minecraft Wiki - No Oficial</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+    <nav class="navAccesibilidad">
+        <ul class="noDots">
+            <li class="accesibilidadItem"><a href="#contenido">Saltar al contenido</a></li>
+            <li class="accesibilidadItem"><a href="#navegacion">Saltar a navegación</a></li>
+        </ul>
+    </nav>
+    <section class="headerNavContainer">
+        <header>
+            <h1 class="title">
+                <figure class="logoContainer">
+                    <img src="../img/minecraft.png" alt="Minecraft logo">
+                </figure>
+            </h1>
+        </header>
+        <section id="navegacion" class="flexContainer">
+            <a href="#navegacion" class="openMenu">
+                <figure>
+                    <img src="../img/burger_menu.png" alt="Abrir menú">
+                </figure>
+            </a>
+            <a href="#" class="closeMenu">
+                <figure>
+                    <img src="../img/cerrar_menu.png" alt="Cerrar menú">
+                </figure>
+            </a>
+            <nav>
+                <ul class="menu flexContainer noDots">
+                    <li><a href="../index.html" class="menuLinks">Inicio</a></li>
+                    <li><a href="./ediciones.html" class="menuLinks">Ediciones del juego</a></li>
+                    <li><a href="./galeria.html" class="menuLinks">Galería</a></li>
+                    <li><a href="#" class="menuLinks">Contacto</a></li>
+                </ul>
+            </nav>
+        </section>
+    </section>
+    <main id="contenido">
+        <section>
+            <article>
+                <h2 class="noMarginTop">Contacto</h2>
+                <form action="#" method="get">
+                    <fieldset>
+                        <legend>Deseas contribuir al desarrollo de esta wiki? Déjanos tu aporte y/o sugerencia.</legend>
+                        <section class="inputsContainer flexContainer">
+                            <label for="name">Su nombre:
+                                <input type="text" name="name" id="name" required placeholder="Juan Pérez">
+                            </label>
+                            <label for="email">Su correo:
+                                <input type="email" name="email" id="email" required placeholder="email@example.com">
+                            </label>
+                            <fieldset>
+                                <legend>Deseas que publiquemos tu nombre en los aportes que realices o deseas realzarlos de manera anónima?</legend>
+                                <section class="publishYes">
+                                    <input type="radio" name="publishInfo" id="publishInfo-Yes" value="YES" checked>
+                                    <label for="publishInfo-Yes">Publicar con mi nombre</label>
+                                </section>
+                                <section class="publishNo">
+                                    <input type="radio" name="publishInfo" id="publishInfo-No" value="NO">
+                                    <label for="publishInfo-No">No quiero que sea publicado mi nombre</label>
+                                </section>
+                            </fieldset>
+                            <label for="message">Su mensaje:
+                                <textarea name="message" id="message" cols="30" rows="10" required placeholder="Aquí puedes escribirnos lo que deseas aportar/sugerir"></textarea>
+                            </label>
+                            <section class="buttonsContainer flexContainer">
+                                <input type="submit" value="Enviar">
+                                <input type="reset" value="Limpiar">
+                            </section>
+                        </section>
+                    </fieldset>
+                </form>
+            </article>
+        </section>
+    </main>
+</body>
+</html>
