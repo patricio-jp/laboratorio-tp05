@@ -408,6 +408,29 @@ input[type=reset] {
 }
 
 
+/* ******************** */
+/* ****** Footer ****** */
+/* ******************** */
+footer {
+    background: url("../img/Background2.png") repeat center;
+}
+
+.footerSection {
+    justify-content: center;
+}
+
+.footerSection a {
+    margin: 1rem 0 0;
+    color: #ccc;
+    text-decoration: none;
+    text-align: center;
+}
+
+.footerSection figure {
+    margin: 0;
+}
+
+
 /* ******************************* */
 /* ****** Celulares > 320px ****** */
 /* ******************************* */
@@ -479,6 +502,14 @@ input[type=reset] {
     .headerNavContainer {
         height: auto;
         background: url("../img/Background2.png") repeat center;
+    }
+
+    #navegacion:target nav {
+        height: auto;
+    }
+
+    #navegacion:target .closeMenu{
+        display: none;
     }
 
     header {
